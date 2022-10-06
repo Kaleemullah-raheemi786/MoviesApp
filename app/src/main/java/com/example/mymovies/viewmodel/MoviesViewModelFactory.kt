@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mymovies.repository.MainRepository
 
-class PokemonViewModelFactory constructor(private val repository: MainRepository): ViewModelProvider.Factory {
+class MoviesViewModelFactory constructor(private val repository: MainRepository): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (modelClass.isAssignableFrom(MoviewViewModel::class.java)) {
             MoviewViewModel(this.repository) as T

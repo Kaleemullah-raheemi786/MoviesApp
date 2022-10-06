@@ -27,7 +27,7 @@ class MoviewViewModel constructor(private val mainRepository: MainRepository) : 
 
     fun getAllMovieS() {
         handleJob = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = mainRepository.getAllPokemon()
+            val response = mainRepository.getAllMovies()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     pokemonList.postValue(response.body())

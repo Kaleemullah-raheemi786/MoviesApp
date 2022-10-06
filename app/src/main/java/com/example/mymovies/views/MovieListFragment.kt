@@ -15,7 +15,7 @@ import com.example.mypokmon.databinding.FragmentPokemonListBinding
 import com.example.mymovies.networking.RetrofitService
 import com.example.mymovies.repository.MainRepository
 import com.example.mymovies.viewmodel.MoviewViewModel
-import com.example.mymovies.viewmodel.PokemonViewModelFactory
+import com.example.mymovies.viewmodel.MoviesViewModelFactory
 
 class MovieListFragment : Fragment(){
     lateinit var viewModel: MoviewViewModel
@@ -40,7 +40,7 @@ class MovieListFragment : Fragment(){
         val repository = MainRepository(retrofitService)
         viewModel = ViewModelProvider(
             this,
-            PokemonViewModelFactory(repository)
+            MoviesViewModelFactory(repository)
         )[MoviewViewModel::class.java]
 
         binding.recycleView.adapter = adapter
